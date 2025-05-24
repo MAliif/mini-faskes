@@ -15,6 +15,7 @@ class CreateObatMTable extends Migration
     {
         Schema::create('obat_m', function (Blueprint $table) {
             $table->id();
+            $table->boolean('statusenabled')->default(true)->nullable();
             $table->string('nama_obat')->nullable();
             $table->string('deskripsi')->nullable();
             $table->string('jenis')->nullable();

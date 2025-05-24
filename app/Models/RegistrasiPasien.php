@@ -9,4 +9,11 @@ class RegistrasiPasien extends Model
 {
     use HasFactory;
     protected $table = 'registrasipasien_t';
+    protected $fillable = [
+        'norec',
+        'statusenabled',
+        'noregistrasi',
+        'tglregistrasi',
+        'nocmfk',
+    ];
 }

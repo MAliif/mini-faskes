@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardCtrl;
+use App\Http\Controllers\RegistrasiCtrl;
 use App\Http\Controllers\RoleCtrl;
 use Illuminate\Support\Facades\Route;
 
@@ -40,5 +41,12 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('dashboard')->controller(DashboardCtrl::class)->group(function () {
         Route::get('/', 'index')->name('dashboard');
         Route::get('/profile', 'profile');
+    });
+
+    Route::prefix('registrasi')->controller(RegistrasiCtrl::class)->group(function () {
+        Route::get('/pasien-baru', 'pasienBaru');
+        Route::get('/pasien-lama', 'pasienLama');
+        Route::post('/save-pasien', 'savePasien');
+        Route::post('/regis-pasien', 'regisPasien');
     });
 });

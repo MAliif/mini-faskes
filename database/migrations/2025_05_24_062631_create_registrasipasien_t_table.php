@@ -16,7 +16,7 @@ class CreateRegistrasipasienTTable extends Migration
         Schema::create('registrasipasien_t', function (Blueprint $table) {
             $table->uuid('norec')->primary();
             $table->boolean('statusenabled')->default(true)->nullable();
-            $table->unsignedBigInteger('noregistrasi')->nullable();
+            $table->unsignedBigInteger('noregistrasi', 10)->nullable();
             $table->unsignedBigInteger('nocmfk')->nullable();
             $table->date('tglregistrasi')->nullable();
             $table->timestamps();

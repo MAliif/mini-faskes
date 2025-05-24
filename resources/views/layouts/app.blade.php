@@ -36,9 +36,24 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
+                    @auth
+                        @php
+                            $user = Auth()->user();
+                        @endphp
+                        @if ($user->rolefk == 1)
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/') }}">Home</a>
+                                </li>
+                            </ul>
+                        @else
+                            <ul class="navbar-nav me-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/') }}">Home</a>
+                                </li>
+                            </ul>
+                        @endif
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

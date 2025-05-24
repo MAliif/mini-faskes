@@ -15,6 +15,7 @@ class CreatePasienMTable extends Migration
     {
         Schema::create('pasien_m', function (Blueprint $table) {
             $table->id();
+            $table->boolean('statusenabled')->default(true)->nullable();
             $table->string('nocm', 8)->nullable();
             $table->string('nama')->nullable();
             $table->date('tgllahir')->nullable();
