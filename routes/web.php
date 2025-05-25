@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardCtrl;
+use App\Http\Controllers\HasilPemeriksaanCtrl;
+use App\Http\Controllers\ObatPasienCtrl;
 use App\Http\Controllers\RegistrasiCtrl;
 use App\Http\Controllers\RoleCtrl;
 use Illuminate\Support\Facades\Route;
@@ -48,5 +50,16 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/pasien-lama', 'pasienLama');
         Route::post('/save-pasien', 'savePasien');
         Route::post('/regis-pasien', 'regisPasien');
+    });
+
+    Route::prefix('periksa')->controller(HasilPemeriksaanCtrl::class)->group(function () {
+        Route::get('/form-periksa-pasien', 'formPeriksaPasien');
+        Route::get('/periksa-pasien-detail', 'periksaPasien')->name('periksa.detail');
+        Route::post('/save-pasien', 'savePeriksaPasien');
+    });
+
+    Route::prefix('obat')->controller(ObatPasienCtrl::class)->group(function () {
+        Route::get('/form-obat-pasien', 'formObatPasien');
+        Route::post('/save-obat-pasien', 'saveObatPasien');
     });
 });

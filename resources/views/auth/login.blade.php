@@ -16,7 +16,7 @@
 
                         <div class="col-12 pt-3">
                             <label for="password">Password</label>
-                            <input id="password" type="password" class="form-control" name="password" required>
+                            <input id="password" type="password" class="form-control" name="password" placeholder="123123" required>
                         </div>
 
                         <div class="col-12 pt-3">

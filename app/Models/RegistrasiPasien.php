@@ -9,6 +9,9 @@ class RegistrasiPasien extends Model
 {
     use HasFactory;
     protected $table = 'registrasipasien_t';
+    protected $primaryKey = 'norec';
+    public $incrementing = false;
+    protected $keyType = 'string';
     protected $fillable = [
         'norec',
         'statusenabled',

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PegawaiSeeder::class,
             PasienSeeder::class,
             ObatSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

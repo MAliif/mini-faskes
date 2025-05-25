@@ -34,7 +34,10 @@
                         </div>
 
                         <div class="col-12 pt-3 text-center">
-                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="submit" class="btn btn-success">
+                                        <i class="bi bi-save"></i>
+                                        Save
+                                    </button>
                         </div>
 
                         @if ($errors->any())

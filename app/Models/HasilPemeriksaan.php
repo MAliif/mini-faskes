@@ -9,4 +9,16 @@ class HasilPemeriksaan extends Model
 {
     use HasFactory;
     protected $table = 'hasilpemeriksaan_t';
+    protected $primaryKey = 'norec';
+    protected $fillable = [
+        'norec',
+        'statusenabled',
+        'norec_rpfk',
+        'perawatfk',
+        'berat_badan',
+        'tekanan_darah',
+        'dokterfk',
+        'keluhan',
+        'diagnosa'
+    ];
 }

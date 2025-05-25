@@ -38,6 +38,7 @@ class RegistrasiCtrl extends Controller
 
     function regisPasien(Request $r)
     {
+        date_default_timezone_set('Asia/Jakarta');
         $pasien = json_decode($r->input('pasien'), true);
         $datePrefix = date('ymd');
         $todayCount = RegistrasiPasien::whereDate('created_at', Carbon::today())->count() + 1;

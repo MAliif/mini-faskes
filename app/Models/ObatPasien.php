@@ -9,4 +9,13 @@ class ObatPasien extends Model
 {
     use HasFactory;
     protected $table = 'obatpasien_t';
+    protected $primaryKey = 'norec';
+    protected $fillable = [
+        'norec',
+        'statusenabled',
+        'norec_rpfk',
+        'obatfk',
+        'jumlah',
+        'aturan_pakai'
+    ];
 }
